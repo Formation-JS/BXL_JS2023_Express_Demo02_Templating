@@ -14,7 +14,10 @@ app.set('view engine', 'ejs');      // Ne pas oublier d'installer le moteur de v
 app.set('views', './views');        // Optionnel (Par default : "./views")
 
 // Middlewares
+// - Logger (Trace de le temps de traitement des requetes)
 app.use(loggerMiddleware);
+// - Gestion des données de formulaire (application/x-www-form-urlencoded)
+app.use(express.urlencoded({ extended: true }));
 
 // Routing
 app.use(routes);

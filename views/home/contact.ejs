@@ -4,13 +4,19 @@
 <h2>Formulaire de contact</h2>
 
 <form method="post">
+    <% var errorMsg; %>
+    <% if(errorMsg)  { %>
+    <div>
+        <span style="color: crimson;"><%= errorMsg %></span>
+    </div>
+    <% } %>
     <div>
         <label for="input-email">Courriel : </label>
         <input id="input-email" type="email" name="email">
     </div>
     <div>
         <label for="input-msg">Message : </label>
-        <textarea name="Message" id="input-msg"></textarea>
+        <textarea name="message" id="input-msg"></textarea>
     </div>
     <div>
         <button type="submit">Envoyer</button>

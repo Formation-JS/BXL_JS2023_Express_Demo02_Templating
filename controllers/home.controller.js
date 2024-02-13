@@ -14,11 +14,27 @@ const homeController = {
     },
 
     contactPost: (req, res) => {
-        
-        // TODO Traiter les données du formulaires
-        // TODO Si donnée validé -> Rediriger vers la page index
 
-        res.status(501).send('<h1>Page non terminé...</h1>')
+        // req.body => Contient les données du formulaire (POST)
+        //             Necessite le middleware "express.urlencoded(...)"
+
+        const { email, message } = req.body;        
+
+        // Validation des données
+        if(!email || !message || email.trim() === '' || message.trim() === '') {
+            const data = {
+                errorMsg : 'Les données ne sont pas valide ! (╯°□°）╯︵ ┻━┻'
+            }
+
+            res.render('home/contact', data);
+            return;
+        }
+
+        // Traitement des données (Cas réel : DB, fichier, email, ...)
+        console.log('Donnée envoyée : ', req.body);
+
+        // Redirection vers la page index
+        res.redirect('/');
     }
 };
 
