@@ -16,6 +16,8 @@ app.use(loggerMiddleware);
 app.use(routes);
 
 // Démarrage du serveur
+const {NODE_ENV, PORT} = process.env;
+
 app.listen(8080, () => {
-    console.log(`Web Server running on port 8080`);
+    console.log(`Web Server running on port ${PORT} (${NODE_ENV})`);
 })
