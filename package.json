@@ -1,7 +1,7 @@
 {
   "name": "demo-express-02",
   "version": "0.1.0",
-  "description": "",
+  "description": "Demo du templating en EJS",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -21,5 +21,16 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.3"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Formation-JS/BXL_JS2023_Express_Demo02_Templating.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Formation-JS/BXL_JS2023_Express_Demo02_Templating/issues"
+  },
+  "homepage": "https://github.com/Formation-JS/BXL_JS2023_Express_Demo02_Templating#readme"
 }
