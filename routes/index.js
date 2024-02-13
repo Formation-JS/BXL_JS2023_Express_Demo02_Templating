@@ -1,6 +1,14 @@
-const routes = require('express').Router();
-routes.get('/', (req, res) => {
-    res.status(200).send('<h1>Hello World </h1>');
+const homeRouter = require('./home.router');
+
+
+const router = require('express').Router();
+
+// Utilisation des sous-routeurs
+router.use(homeRouter);
+
+// Page 404
+router.all("**", (req, res) => {
+    res.status(404).send('<h1>Page non trouvé (っ °Д °;)っ </h1>')
 })
 
-module.exports = routes;
+module.exports = router;
