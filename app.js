@@ -9,6 +9,10 @@ const routes = require('./routes');
 // Création du serveur Web
 const app = express();
 
+// Configuration du moteur de vue
+app.set('view engine', 'ejs');      // Ne pas oublier d'installer le moteur de vue
+app.set('views', './views');        // Optionnel (Par default : "./views")
+
 // Middlewares
 app.use(loggerMiddleware);
 

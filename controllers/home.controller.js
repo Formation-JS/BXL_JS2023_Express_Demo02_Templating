@@ -1,13 +1,16 @@
 const homeController = {
 
     index: (req, res) => {
-        
-        res.send('<h1>Index</h1>');
+
+        const data = {
+            now: (new Date()).toLocaleDateString('fr-be')
+        };
+        res.render('home/index', data);
     },
 
     contact: (req, res) => {
 
-        res.send('<h1>Formulaire de contact...</h1>');
+        res.render('home/contact');
     },
 
     contactPost: (req, res) => {
